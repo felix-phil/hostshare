@@ -19,6 +19,7 @@
     "eslint-config-next": "13.4.3",
     "framer-motion": "^10.12.16",
     "google-map-react": "^2.2.1",
+    "moment": "^2.29.4",
     "next": "13.4.3",
     "next-themes": "^0.2.1",
     "popmotion": "^11.0.5",
