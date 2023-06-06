@@ -16,12 +16,17 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.none-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+.none-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.none-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.none-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: 0px; /* Firefox */
 }
