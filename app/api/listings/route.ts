@@ -1,10 +1,15 @@
 import { NextResponse } from "next/server";
 import fspromise from "fs/promises";
+import path from "path";
 
 export async function GET(req: Request) {
   try {
-    const file = await fspromise.readFile("data/listings.json");
-    const data = JSON.parse(file.toString("utf-8"));
+    const jsonDirectory = path.join(process.cwd(), "data");
+    const file = await fspromise.readFile(
+      jsonDirectory + "/listings.json",
+      "utf-8"
+    );
+    const data = JSON.parse(file);
     const { searchParams } = new URL(req.url);
     const location = searchParams.get("location");
     const properties = data["data"];
