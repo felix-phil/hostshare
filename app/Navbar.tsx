@@ -230,7 +230,6 @@ const Navbar = () => {
                     : "Add Date"}
                 </h5>
                 <input
-                  min={new Date().toISOString()}
                   onChange={(e) =>
                     setInputValues((prev) => ({
                       ...prev,

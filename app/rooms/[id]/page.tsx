@@ -12,6 +12,7 @@ import Image from "next/image";
 import Description from "./Description";
 import Specials from "./Specials";
 import Amenities from "./Amenities";
+import Reserve from "./Reserve";
 
 async function getListing(id: string) {
   try {
@@ -133,7 +134,13 @@ const Page = async ({ params }: IProps) => {
           {/* Offerings */}
           <Amenities data={listing?.info?.amenities} />
         </div>
-        <div className="md:col-s4 md:flex hidden"></div>
+        <div className="sticky top-0 right-0 md:col-span-4 lg:col-span-4 w-full hidden md:flex  px-5 py-2 ">
+          <Reserve
+            ratings={listing?.info.ratings.accuracy || 0}
+            priceString={`${listing?.info.currency.symbol}${listing?.info.price}`}
+            reviewCount={listing?.info.visibleReviewCount || 0}
+          />
+        </div>
       </div>
 
       {/* bottom for mobile */}
@@ -143,9 +150,7 @@ const Page = async ({ params }: IProps) => {
             {listing?.info.currency?.symbol}
             {listing?.info.price}
           </h4>
-          <h4 className="ml-2 text-[12px] font-normal text-gray-500">
-            night
-          </h4>
+          <h4 className="ml-2 text-[12px] font-normal text-gray-500">night</h4>
         </div>
         <button className="px-6 py-4 rounded-xl bg-gradient-to-br font-bold text-[14px] text-white from-primary to-primary/50">
           Reserve
