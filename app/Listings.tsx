@@ -135,8 +135,8 @@ const Listings = () => {
               onClick={() => showMapOrList()}
               className="transition-all duration-100 delay-100 hover:scale-105  flex flex-row items-center justify-center gap-x-2  py-3 px-5 text-white text-[15px] font-normal bg-black rounded-full"
             >
-              Show {map_drawer_open ? "list" : "map"}{" "}
-              {map_drawer_open ? <FaListUl size={20} /> : <FaMap size={20} />}
+              Show {map_drawer_open==="true" ? "list" : "map"}{" "}
+              {map_drawer_open==="true" ? <FaListUl size={20} /> : <FaMap size={20} />}
             </button>
           </div>
         )}
